@@ -1,12 +1,19 @@
 class Solution {
     public int fib(int n) {
-        if(n == 0 || n == 1){
+
+        if (n <= 1) {
             return n;
         }
-     int fib1 = fib(n-1);
-     int fib2 = fib(n-2);
-      int fn = fib1 + fib2;
-      return fn;
-        
+
+        int a = 0;
+        int b = 1;
+
+        for (int i = 2; i <= n; i++) {
+            int c = a + b;
+            a = b;
+            b = c;
+        }
+
+        return b;
     }
 }
